@@ -1,0 +1,178 @@
+    // Alguns comandos
+    
+    Criar um projeto React 
+npx create-react-app (nome da pasta)
+npx create-react-app . (nesta pastas)
+    Run things
+npm run test, build, etc
+
+
+
+    .gitignore 
+Ignorar coisas para ir para o gitHub, por exemplo.,
+
+// WebPack e Build, organizam os arquivos e minificar arquivos
+para serem otimizados e mais leves ao serem lidos pelo 
+navegador.
+
+// Babel traduz a sintaxe do JS moderno para a compreensão
+do navegador
+
+// React pode estar em apenas alguns trechos do site, ou
+nele inteiro. 
+
+
+=-=-=-=-=-=-=-=-=-
+
+/* O que é um componente react?
+    Um componente react é simplesmente uma classe que tem o método render() e retorna JSX. Ou uma função que também retorna JSX. É possível criar componentes de classe, ou de função. */
+    Componentes Class e Function
+
+    class App extends Component {
+        render() {
+            return (
+                <h1>Oi</h1>
+            )
+        }
+    }
+
+    function App() {
+        return(
+            <h1>Oi</h1>
+        )
+    }
+
+
+#14 Componentes de classe com estados (STATEFUL)
+
+O que é o estado? São basicamente dados que o componente utiliza. 
+
+Todo componente do react pode ter um estado. E esse estado é basicamente um
+objeto que contém os dados desse componente.
+
+
+// Sempre que mudar alguma coisa no estado, o  render()
+vai ser chamado novamente
+
+// Para não ter que usar esse comando:
+this.handlePClick = this.handlePClick.bind(this),
+e adicionar o "this", use arrow functions!
+
+    Código:
+
+class App extends Component {
+  //constructor(props) {
+    // super(props)
+    // this.handlePClick = this.handlePClick.bind(this)
+    // this.  
+    state = {
+      name: 'Otávio Miranda',
+      counter: 0 
+    }
+  }
+
+  handleAClick = (event) => {
+    const { counter } = this.state //const counter = this.state.counter
+    event.preventDefault()
+    this.setState({ counter: counter + 1 })
+  }
+
+
+  handlePClick() {
+    const { name } = this.state
+    console.log(`<p> clicado ${name}`)
+    this.setState({ name: 'Júnior'})
+  } 
+
+  render() {
+    const { name, counter } = this.state
+
+#16 State com arrays e objetos
+
+// Toda vez que você ver map(), lembre de colocar key 
+no primeiro elemento retornado por esse map()
+
+Código :
+
+ render() {
+    const { posts } = this.state
+
+    return (
+          <div className="App">
+            {posts.map(post => (
+              <div key={post.id}>
+              <h1>{post.title}</h1>
+              <p>{post.body}</p>
+              </div>
+            ))}
+          </div>
+        );
+  }
+  
+
+#17 LifeCycle methods ( métodos de ciclo de vida )
+
+  componentDidMount() {
+    // método para quando componente for montado
+  }
+
+  componentDidUpdate() {
+    // método para quando um componente for atualizado
+  }
+
+  componentWillUnmount() {
+    // método para quando um componente ' morrer ' 
+  }
+
+  link útil: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+#19 Buscando dados externos com fetch (Data fecthing)
+
+
+
+#33 
+
+Testes unitários 
+
+É um tipo de teste, que pegamos uma parte da aplicação,
+muito pequena: Uma função, uma classe. E ela é testada.
+
+Objetos mock, objetos simulados ou simplesmente mock em desenvolvimento de software são objetos que simulam o comportamento de objetos reais de forma controlada.
+
+// Exemplo: precisa-se de uma função para mandar e-mail, e no teste, iria se mandar por volta de 90000 mil e-mails para a pessoa, porque o teste irá rodar
+diversas vezes, o que não é viável. Mock é um objeto fictício por assim dizer.
+Vai testar a função sem executá-la, por assim dizer.
+
+// .test - testes de integração
+
+// .spec - testes de unidade ou testes unitários
+
+// cmd - npm run test -- --coverage
+
+
+  TDD - test driven development
+// Um outro tipo de comportamento de teste, que seria as pessoas
+criarem primeiro o TESTE para depois criar o componente.
+Assim você já escreve o teste do jeito que o componente vai ser.
+
+
+// npm run test -- --watchAll="false" --coverage
+
+ESLINT
+
+Comando: npx eslint --init
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

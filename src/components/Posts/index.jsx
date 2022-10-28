@@ -1,6 +1,7 @@
 import { PostCard } from "../PostCard"
 import './styles.css'
-export const Posts = ({ posts }) => (
+// Cannot read properties of undefined ( reading map)
+export const Posts = ({ posts = [] }) => (
     <div className="posts">
     {posts.map(post => (
         <PostCard
