@@ -1,18 +1,19 @@
-export const loadPosts = async () => {{
-        // DEFININDO VARIÁVEIS GUSTAVINHO 
-        const postsResponse = fetch('https://jsonplaceholder.typicode.com/posts')
-        const photosResponse = fetch('https://jsonplaceholder.typicode.com/photos')
+export const loadPosts = async () => {
+  {
+    // DEFININDO VARIÁVEIS GUSTAVINHO 
+    const postsResponse = fetch('https://jsonplaceholder.typicode.com/posts')
+    const photosResponse = fetch('https://jsonplaceholder.typicode.com/photos')
 
-        const [posts, photos] = await Promise.all([postsResponse, photosResponse])
+    const [posts, photos] = await Promise.all([postsResponse, photosResponse])
 
-        const postsJson = await posts.json() // converter para json
-        const photosJson = await photos.json()
+    const postsJson = await posts.json() // converter para json
+    const photosJson = await photos.json()
 
-        const postsAndPhotos = postsJson.map((post, index) => {
-            return { ...post, feijao: photosJson[index].url }
-        })
+    const postsAndPhotos = postsJson.map((post, index) => {
+      return { ...post, feijao: photosJson[index].url }
+    })
 
-        return postsAndPhotos; 
-    }
+    return postsAndPhotos;
+  }
 }
 

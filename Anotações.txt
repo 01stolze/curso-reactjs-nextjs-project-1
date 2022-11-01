@@ -158,10 +158,24 @@ Assim você já escreve o teste do jeito que o componente vai ser.
 
 // npm run test -- --watchAll="false" --coverage
 
-ESLINT
+ESLINT // ESLint é uma ferramenta de análise de código
+ estático para identificar padrões problemáticos encontrados 
+ no código JavaScript.
 
 Comando: npx eslint --init
 
+Prettier: serve bem para deixar nosso código padronizado
+//  npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+// Eslint fix all - npx eslint src/**/*.jsx --fix
+
+// npm audit
+
+// npm i 
+
+
+Instalar prop-types
+// npm i prop-types
 
 
 
