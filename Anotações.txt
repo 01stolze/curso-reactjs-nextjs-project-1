@@ -178,8 +178,13 @@ Instalar prop-types
 // npm i prop-types
 
 
+  Mock service worker - biblioteca mock
 
+  // npm i -D msw
 
+  Alguns comandos do jest : 
+
+  afterEach(), beforeAll(), afterAll()
 
 
 

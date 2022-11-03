@@ -1,8 +1,9 @@
 export const loadPosts = async () => {
   {
-    // DEFININDO VARIÁVEIS GUSTAVINHO 
+    // DEFININDO VARIÁVEIS GUSTAVINHO
     const postsResponse = fetch('https://jsonplaceholder.typicode.com/posts')
     const photosResponse = fetch('https://jsonplaceholder.typicode.com/photos')
+    // fetch sem opção -- requisição = get *método*
 
     const [posts, photos] = await Promise.all([postsResponse, photosResponse])
 
@@ -13,7 +14,6 @@ export const loadPosts = async () => {
       return { ...post, feijao: photosJson[index].url }
     })
 
-    return postsAndPhotos;
+    return postsAndPhotos
   }
 }
-
